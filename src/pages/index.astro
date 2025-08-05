@@ -1,24 +1,51 @@
 ---
-import Navigation from "../components/Navigation.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+// import Navigation from "../components/Navigation.astro";
 import Button from "../components/Button.astro";
-
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Home page</title>
-	</head>
-	<body>
-		<Navigation />
-		<h1>Home Page</h1>
-		<p>
-			Everything you can imagine id real and this is my reality!
-      you are welcome to my world!
-		</p>
-		<Button text="Click me!" />
-	</body>
-</html>
+<MainLayout title="Home Page">
+  <div class="homepage">
+    <img src="/images/home-page-image.jpeg" />
+    <div><h1>Hello!</h1></div>
+    <p>
+      Everything you can imagine is real and this is my reality! you are welcome
+      to my world!
+    </p>
+    <Button text="ENTER" />
+  </div>
+</MainLayout>
+
+<style>
+  .homepage {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    grid-template-rows: 40% 50% 10%; /* 3 rows */
+    gap: 10px; /* Optional spacing */
+    padding: 10px;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 55px;
+  }
+
+  img {
+    width: 300px;
+    grid-row: 1 / span 3; /* Span all 3 rows */
+    grid-column: 1 / 2; /* First column */
+  }
+
+  button {
+    grid-column: 2 / 3; /* Second column */
+  }
+
+  h1 {
+    grid-row: 1 / 2;
+    display: flex;
+    text-align: end;
+  }
+
+  p {
+    grid-row: 2 / 3;
+  }
+</style>

@@ -1,147 +1,54 @@
 ---
-const { title } = Astro.props;
-import Navigation from "../components/Navigation.astro";
+import MenuLayout from "../layouts/menu-layout.astro"
+import Navigation from "../components/Navigation.astro"
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="My website description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-
-			body {
-				font-family: system-ui, sans-serif;
-				min-height: 100vh;
-				display: flex;
-				flex-direction: column;
-			}
-
-			.header {
-				background: #333;
-				color: white;
-				padding: 20px;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-			}
-
-			.logo {
-				font-size: 24px;
-				font-weight: bold;
-			}
-
-			.menu {
-				font-size: 18px;
-			}
-
-			.main-wrapper {
-				flex: 1;
-				display: flex;
-				background: #f5f5f5;
-				gap: 20px;
-				padding: 20px;
-			}
-
-			.content-area {
-				flex: 1;
-				display: flex;
-				flex-direction: column;
-				gap: 20px;
-			}
-
-			.title-section {
-				background: #333;
-				color: white;
-				padding: 40px;
-				text-align: center;
-			}
-
-			.title-section h1 {
-				font-size: 32px;
-				font-weight: normal;
-			}
-
-			.main-content {
-				background: #333;
-				color: white;
-				padding: 40px;
-				flex: 1;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 24px;
-			}
-
-			.right-section {
-				width: 300px;
-				background: #999;
-				color: white;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 18px;
-			}
-
-			.sub-content {
-				background: #333;
-				color: white;
-				padding: 60px;
-				text-align: center;
-				font-size: 24px;
-			}
-
-			.footer {
-				background: #333;
-				color: white;
-				padding: 30px;
-				text-align: center;
-				font-size: 24px;
-				border-top: 3px solid #f5f5f5;
-			}
-		</style>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Home page</title>
 	</head>
-	<body>
-    <Navigation />
-		<header class="header">
-			<div class="logo">
-				<slot name="logo">Logo</slot>
-			</div>
-			<div class="menu">
-				<slot name="menu">Menu</slot>
-			</div>
-		</header>
+  <body>
+<Navigation />
+<MenuLayout title="Holy Grail Layout Example">
+	<div slot="logo">My Logo</div>
+	<nav slot="menu">
+		<a href="#home">Home</a> | <a href="#about">About</a> | <a href="#contact">Contact</a>
+	</nav>
+	<div slot="title">
+		<h1>Welcome to My Site</h1>
+		<p>This is the title section</p>
+	</div>
+	<div slot="main">
+		<h2>Main Content Area</h2>
+		<p>This is where your primary content goes. It expands to fill the available space.</p>
+		<p>The layout adapts to different content lengths while maintaining the overall structure.</p>
+	</div>
+	<div slot="aside">
+		<h3>Right Section</h3>
+		<p>This could be an image, sidebar content, or any other complementary information.</p>
+	</div>
+	<div slot="sub-content">
+		<h2>Sub-Content Section</h2>
+		<p>This section spans the full width below the main content area.</p>
+		<p>Perfect for additional information, testimonials, or related content.</p>
+	</div>
+	<div slot="footer">
+		<p>&copy; 2025 My Website. All rights reserved.</p>
+	</div>
+</HolyGrailLayout>
 
-		<div class="main-wrapper">
-			<div class="content-area">
-				<section class="title-section">
-					<slot name="title">
-						<h1>Title</h1>
-					</slot>
-				</section>
-				<main class="main-content">
-					<slot name="main">Main Content</slot>
-				</main>
-			</div>
-			<aside class="right-section">
-				<slot name="aside">Image</slot>
-			</aside>
-		</div>
-
-		<section class="sub-content">
-			<slot name="sub-content">Sub-Content</slot>
-		</section>
-
-		<footer class="footer">
-			<slot name="footer">Footer</slot>
-		</footer>
-	</body>
-</html>
+</body>
+<style>
+	nav a {
+		color: white;
+		text-decoration: none;
+	}
+	nav a:hover {
+		text-decoration: underline;
+	}
+</style>

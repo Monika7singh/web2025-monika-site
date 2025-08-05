@@ -1,0 +1,17 @@
+:root{
+  --main-background: #edede9;
+  --color-primary: #03045E;
+  --maintext-color: #03045E;
+  --color-secondary: #5F0F40;
+  —-colour-highlight: #B9B9B9;
+
+}
+
+html{
+  background-color: var(--main-background);
+  /* font-color:var(--maintext-color) */
+}
+
+p{
+  color: #03045E;
+}
