@@ -1,4 +1,4 @@
----
+<!-- ---
 import MainLayout from "../layouts/MainLayout.astro";
 // import Navigation from "../components/Navigation.astro";
 // import Button from "../components/Button.astro";
@@ -50,4 +50,70 @@ import LinkButton from "../components/LinkButton.astro";
   p {
     grid-row: 2 / 3;
   }
+</style> -->
+
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import LinkButton from "../components/LinkButton.astro";
+import "../styles/global.css";
+---
+
+<style>
+  body {
+    margin: 0;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  /* Blue image box */
+  .image-box {
+    width: 300px;
+    height: 400px;
+    background-color: navy;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    object-fit: cover;
+  }
+
+  /* Text block */
+  .text-box {
+    background-color: #B9B9B9; /* gray */
+    padding: 20px;
+    max-width: 400px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 </style>
+<MainLayout>
+<div class="container">
+  <!-- Left: Image -->
+  <img src="/images/home-page-image.jpeg" class="image-box" />
+
+  <!-- Right: Text + Your LinkButton -->
+  <div>
+    <div class="text-box">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting.
+    </div>
+
+    <!-- Use your existing button -->
+   <LinkButton text="ENTER" link="/about" />
+  </div>
+</div>
+</MainLayout>
