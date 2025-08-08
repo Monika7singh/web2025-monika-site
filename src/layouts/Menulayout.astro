@@ -1,5 +1,5 @@
 ---
-const { title } = Astro.props;
+import LinkButton from "../components/LinkButton.astro"
 ---
 
 <style>
@@ -9,9 +9,10 @@ const { title } = Astro.props;
   }
 
   .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
+    max-width: 600px;
+    margin-left: 180px;
+    /* margin: 0 auto; */
+    /* padding: 40px; */
   }
 
   .top-section {
@@ -51,7 +52,7 @@ const { title } = Astro.props;
     flex-direction: column;
     gap: 10px;
     position: fixed;
-		top: 250px;
+		top: 80px;
 		right: 200px;
 		width: 200px;
   }
@@ -95,13 +96,22 @@ const { title } = Astro.props;
   <slot/>
 
     <div class="sidebar">
-      <button>About Me</button>
+      <LinkButton text="About Me" link="/about" />
+      <LinkButton text="Wrok Protfolio" link="/work" />
+      <LinkButton text="Art" link="/art" />
+      <LinkButton text="Gallery" link="/gallery" />
+      <LinkButton text="Recommendation" link="/recommendation" />
+      <LinkButton text="List of Random Things" link="/list" />
+      <LinkButton text="Things to Remember" link="/remember" />
+
+      <!-- <button>About Me</button>
       <button>Work Portfolio</button>
       <button>Art</button>
       <button>Gallery</button>
       <button>Recommendation</button>
       <button>List of Random things</button>
-      <button>Things to Remember</button>
+      <button>Things to Remember</button> -->
+
     </div>
 
 </div>
