@@ -24,16 +24,12 @@ const { title } = Astro.props;
     margin: 30px;
   }
 
-  /* .work-progress {
-    display: flexbox;
-    justify-content: space-between;
-  } */
-
-  /* .square {
-    width: 40px;
-    height: 40px;
-    background-color: #4b0034;
-  } */
+  img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    justify-self: end;
+  }
 
   .name {
 
@@ -59,7 +55,7 @@ const { title } = Astro.props;
     flex-direction: column;
     gap: 10px;
     position: fixed;
-		top: 230px;
+		top: 250px;
 		right: 200px;
 		width: 200px;
   }
@@ -94,11 +90,13 @@ const { title } = Astro.props;
   <body>
 <div class="container">
   <div class="top-section">
-      <img src="./public/images/work-in-progress-sample.jfif" />
-      <img src="./public/images/stamp-sample.jfif" />
+      <img src="/images/home-page-image.jpeg" />
+      <img src="/images/home-page-image.jpeg" />
   </div>
 
   <div class="name">MONİKA SİNɢH</div>
+
+  <slot/>
 
     <div class="sidebar">
       <button>About Me</button>
@@ -109,6 +107,6 @@ const { title } = Astro.props;
       <button>List of Random things</button>
       <button>Things to Remember</button>
     </div>
-  <!-- </div> -->
+
 </div>
 </body>

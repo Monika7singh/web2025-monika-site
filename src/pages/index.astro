@@ -1,9 +1,9 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 // import Navigation from "../components/Navigation.astro";
-import Button from "../components/Button.astro";
+// import Button from "../components/Button.astro";
 import "../styles/global.css";
-
+import LinkButton from "../components/LinkButton.astro";
 ---
 
 <MainLayout title="Home Page">
@@ -14,7 +14,7 @@ import "../styles/global.css";
       Everything you can imagine is real and this is my reality! you are welcome
       to my world!
     </p>
-    <Button text="ENTER" />
+    <LinkButton text="ENTER" link="/about" />
   </div>
 </MainLayout>
 

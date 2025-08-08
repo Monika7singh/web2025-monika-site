@@ -1,0 +1,19 @@
+---
+const { link, text } = Astro.props;
+---
+
+<a href={link}>
+  {text}
+</a>
+
+<style>
+  a {
+    width: 100px;
+    background-color: transparent;
+    border: 1px solid #4b0034;
+    border-radius: 5px;
+    color: #4b0034;
+    padding: 10px;
+    text-align: center;
+  }
+</style>
