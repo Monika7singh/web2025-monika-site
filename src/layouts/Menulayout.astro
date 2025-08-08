@@ -72,18 +72,22 @@ const { title } = Astro.props;
         <img src="/images/stamp-sample.jfif" />
         <img src="/images/work-in-progress-sample.jfif" />
       </div>
+
       <header>
         <div class="logo">Logo</div>
       </header>
+
       <aside class="sidebar">
         <div class="menu">
           <slot name="menu" />
         </div>
         <div class="socials">Socials</div>
       </aside>
+
       <main class="main-content">
         <slot />
       </main>
+      
     </div>
   </body>
 </html>
