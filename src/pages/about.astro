@@ -1,29 +1,9 @@
 ---
-// import Menulayout from "../layouts/Menulayout.astro";
-// import PostCard from "../components/PostCard.astro";
-
 import StickySidebarLayout from "../layouts/StickySidebarLayout.astro";
+import LinkButton from "../components/LinkButton.astro";
 
 import "../styles/global.css";
 ---
-
-<!-- <Menulayout title="About Me">
-  <slot>
-    <PostCard
-      content={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`}
-      imageSrc="/images/home-page-image.jpeg"
-      imageAlt="Decorative box"
-    />
-    <br />
-    <br />
-    <PostCard
-      content={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`}
-      imageSrc="/images/home-page-image.jpeg"
-      imageAlt="Decorative box"
-    />
-  </slot>
-</Menulayout> -->
-
 
 <StickySidebarLayout title="Sticky Sidebar Layout Example">
 	<div slot="main">
@@ -57,16 +37,13 @@ import "../styles/global.css";
 	<div slot="sidebar">
 		<h3>Navigation</h3>
 		<ul>
-			<li><a href="#intro">Introduction</a></li>
-			<li><a href="#features">Features</a></li>
-			<li><a href="#usage">Usage</a></li>
-			<li><a href="#customization">Customization</a></li>
-		</ul>
-
-		<h3>Quick Links</h3>
-		<ul>
-			<li><a href="#top">Back to Top</a></li>
-			<li><a href="#bottom">Jump to Bottom</a></li>
+			<LinkButton text="About Me" link="/about" />
+      <LinkButton text="Wrok Protfolio" link="/work" />
+      <LinkButton text="Art" link="/art" />
+      <LinkButton text="Gallery" link="/gallery" />
+      <LinkButton text="Recommendation" link="/recommendation" />
+      <LinkButton text="List of Random Things" link="/list" />
+      <LinkButton text="Things to Remember" link="/remember" />
 		</ul>
 	</div>
 </StickySidebarLayout>
@@ -109,4 +86,32 @@ import "../styles/global.css";
 		border-radius: 3px;
 		font-family: 'Monaco', 'Courier New', monospace;
 	}
+
+	.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* position: fixed; */
+		/* top: 80px;
+		right: 200px;
+		width: 200px; */
+  }
+
+  .sidebar button {
+    background-color: transparent;
+    border: 1px solid #4b0034;
+    border-radius: 5px;
+    color: #4b0034;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .sidebar button:hover {
+    background-color: #4b0034;
+    color: #fff;
+  }
 </style>
