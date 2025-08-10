@@ -18,5 +18,23 @@ const { link, text } = Astro.props;
     cursor: pointer;
     transition: all 0.2s;
     font-family: "filmotype-maxwell", sans-serif;
+    display: inline-block;
+    /* width: fit-content; */
+  }
+
+  .sidebar :global(a) {
+    display: inline-block;
+    /* width: fit-content; */
+    border: 1px solid #4b0034;
+    border-radius: 5px;
+    color: #4b0034;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .sidebar :global(a:hover) {
+    background-color: #4b0034;
+    color: white;
   }
 </style>
