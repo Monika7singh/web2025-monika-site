@@ -16,6 +16,19 @@ import "../styles/global.css";
   </div>
 
   <div slot="main">
+    <h2>Pick a category</h2>
+    <div class="category-list">
+      <a href="/movies">Movies</a>
+      <a href="/tv-shows">TV Shows</a>
+      <a href="/books">Books</a>
+      <a href="/anime">Anime</a>
+      <a href="/webtoon">Webtoon</a>
+      <!-- <a href="/src/pages/movies.astro">Movies</a>
+      <a href="/src/pages/tv-shows.astro">TV Shows</a>
+      <a href="/src/pages/books.astro">Books</a>
+      <a href="/src/pages/anime.astro">Anime</a>
+      <a href="/src/pages/webtoon.astro">Webtoon</a> -->
+    </div>
   </div>
 
   <div slot="sidebar" class="sidebar">
@@ -31,6 +44,29 @@ import "../styles/global.css";
 </StickySidebarLayout>
 
 <style>
+  .category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .category-list a {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid #4b0034;
+    border-radius: 5px;
+    color: #4b0034;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .category-list a:hover {
+    background-color: #4b0034;
+    color: #fff;
+  }
+
+
   .image-header {
     display: flex;
     align-items: center;
