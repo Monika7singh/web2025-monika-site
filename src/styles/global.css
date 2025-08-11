@@ -44,6 +44,11 @@ h1 {
   font-style: normal;
 }
 
+li {
+  font-family: var(--font-body);
+  color: var(--color-primary);
+}
+
 p{
   font-family: var(--font-body);
   color: var(--color-primary);
