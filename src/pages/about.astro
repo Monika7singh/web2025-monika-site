@@ -1,6 +1,7 @@
 ---
 import StickySidebarLayout from "../layouts/StickySidebarLayout.astro";
 import LinkButton from "../components/LinkButton.astro";
+import PostCard from "../components/PostCard.astro";
 
 import "../styles/global.css";
 ---
@@ -10,59 +11,11 @@ import "../styles/global.css";
     <h1>image</h1>
   </div>
   <div slot="main">
-    <h1>Article Title</h1>
-    <p>
-      This is an example of how to use the Sticky Sidebar layout. The sidebar
-      will remain visible as you scroll through this content.
-    </p>
-
-    <h2>Introduction</h2>
-    <p>
-      This layout is perfect for articles, documentation, or any content that
-      benefits from persistent sidebar navigation or information.
-    </p>
-    <p>
-      The sidebar uses <code>position: sticky</code> to remain in view while the
-      main content scrolls naturally.
-    </p>
-
-    <h2>Features</h2>
-    <ul>
-      <li>Responsive design that stacks on mobile</li>
-      <li>Sticky positioning that works across browsers</li>
-      <li>Customizable content slots</li>
-      <li>Clean, minimal styling</li>
-    </ul>
-
-    <h2>Usage</h2>
-    <p>
-      Simply import the StickySidebarLayout component and use the "main" and
-      "sidebar" slots to add your content.
-    </p>
-    <p>
-      The layout automatically handles the responsive behavior and sticky
-      positioning.
-    </p>
-
-    <h2>Customization</h2>
-    <p>
-      The layout uses CSS custom properties and can be easily customized by
-      overriding the styles.
-    </p>
-    <p>
-      The pink background and border styling are just examples - change them to
-      match your design system.
-    </p>
-
-    <h2>More Content</h2>
-    <p>
-      Keep scrolling to see how the sidebar stays in position while this content
-      flows naturally.
-    </p>
-    <p>
-      This makes it perfect for table of contents, author information, related
-      links, or any persistent navigation.
-    </p>
+    <PostCard
+  content={`Hi, I’m Monika — a designer who lives where minimal meets timeless, and imagination refuses to sit still.`}
+  imageSrc="/images/stamps-42.png"
+  imageAlt="Decorative box"
+    />
   </div>
   <!-- <div slot="sidebar">
     <!- <h3>Navigation</h3> -->
