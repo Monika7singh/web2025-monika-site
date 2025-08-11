@@ -7,26 +7,38 @@ import "../styles/global.css";
 ---
 
 <StickySidebarLayout title="Sticky Sidebar Layout Example">
-  <div slot="photoheader">
-    <h1>image</h1>
+  <div slot="photoheader" class="image-header">
+    <img class="top" src="/images/stamps-42.png" />
+    <img class="topp" src="/images/stamps-10.png" />
   </div>
+
+  <div slot="logo">
+    <h1>MONIKA SINGH</h1>
+  </div>
+
   <div slot="main">
     <PostCard
-  content={`Hi, I’m Monika — a designer who lives where minimal meets timeless, and imagination refuses to sit still.`}
-  imageSrc="/images/stamps-42.png"
-  imageAlt="Decorative box"
+      content={`Hi, I’m Monika — a designer who lives where minimal meets timeless, and imagination refuses to sit still.`}
+      imageSrc="/images/stamps-12.png"
+      imageAlt="Decorative box"
+    />
+    <br />
+    <PostCard
+      content={`Hi, I’m Monika — a designer who lives where minimal meets timeless, and imagination refuses to sit still.`}
+      imageSrc="/images/stamps-30.png"
+      imageAlt="Decorative box"
     />
   </div>
   <!-- <div slot="sidebar">
     <!- <h3>Navigation</h3> -->
   <!-- <ul> -->
-  <LinkButton text="About Me" link="/about" />
+  <!-- <LinkButton text="About Me" link="/about" />
   <LinkButton text="Wrok Protfolio" link="/work" />
   <LinkButton text="Art" link="/art" />
   <LinkButton text="Gallery" link="/gallery" />
   <LinkButton text="Recommendation" link="/recommendation" />
   <LinkButton text="List of Random Things" link="/list" />
-  <LinkButton text="Things to Remember" link="/remember" />
+  <LinkButton text="Things to Remember" link="/remember" /> -->
   <!-- </ul> -->
   <!-- </div> --> --
 
@@ -42,6 +54,21 @@ import "../styles/global.css";
 </StickySidebarLayout>
 
 <style>
+  .image-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top {
+    width: 200px;
+    height: auto;
+  }
+
+  .topp {
+    width: 90px;
+    height: auto;
+  }
+
   a:hover {
     background: rgba(255, 255, 255, 0.2);
     text-decoration: underline;

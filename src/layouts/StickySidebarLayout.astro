@@ -68,6 +68,12 @@ const { title } = Astro.props;
           order: -1;
         }
       }
+
+      /* .topphotoheader{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      } */
     </style>
   </head>
   <body>
@@ -75,7 +81,10 @@ const { title } = Astro.props;
       <main class="main-content">
         <header class="topphotoheader">
         <slot name="photoheader"></slot>
-      </header>
+        </header>
+      <div>
+      <slot name="logo">logo</slot>
+      </div>
         <slot name="main">Main Content</slot>
       </main>
       <aside class="sidebar">
