@@ -3,41 +3,33 @@ const { src, alt } = Astro.props;
 ---
 
 <div class="stamp-border">
-  <img src={src} alt={alt} />
+<slot />
 </div>
 
 <style>
-.stamp-border {
-    /* Change this value to adjust the stamp perforation size: */
-    --radius: 8px;
+img {
+  --r: 10px; /* control the radius of the circles */
+  padding: calc(2*var(--r));
+  filter: grayscale(.4) drop-shadow(0 0 1px #0005) drop-shadow(0 0 1px #0005);
+  background:
+    radial-gradient(var(--r),#0000 98%,#fff) round
+      calc(-1.5*var(--r)) calc(-1.5*var(--r)) /calc(3*var(--r)) calc(3*var(--r)),
+    linear-gradient(#fff 0 0)  no-repeat
+      50%/calc(100% - 3*var(--r)) calc(100% - 3*var(--r));
+}
 
-    background-image:
-      radial-gradient(
-        var(--radius),
-        transparent 98%,
-        white
-      ),
-      linear-gradient(white 0 0);
-    background-repeat:
-      round,
-      no-repeat;
-    background-position:
-      calc(var(--radius) * -1.5) calc(var(--radius) * -1.5),
-      50%;
-    background-size:
-      calc(var(--radius) * 3) calc(var(--radius) * 3),
-      calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
-  }
-
-
-  image{
-    width: 40px;
-  }
-  .stamp-border {
-    width: 100px;
-    height: 100px;
-    /* position: fixed; */
-    inset: 0;
-    margin: auto;
-  }
+body {
+  margin: 0;
+  height: 100vh;
+  column-count: 2;
+/*        column-gap: 10px; */
+/*   row-gap: 10px */
+       padding:50px;
+/*   display: grid; */
+/*   place-content: center;
+  align-items: center;
+  grid-auto-flow: column;
+  grid-gap: 30px;
+  background: pink;
+} */
 </style>
