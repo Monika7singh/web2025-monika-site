@@ -5,10 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "optimize-images": "node scripts/optimize-images.js",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^5.12.8"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.3"
   }
 }
