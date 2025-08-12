@@ -1,11 +1,11 @@
 ---
-const { content, imageSrc, } = Astro.props;
+const { content } = Astro.props;
 ---
 
 <style>
   .container {
     display: grid;
-    grid-template-columns: 2fr 80px;
+    grid-template-columns: 1fr 80px;
     background-color: #b9b9b9; /* light gray */
     padding: 20px;
     gap: 20px;
@@ -24,17 +24,16 @@ const { content, imageSrc, } = Astro.props;
     padding: 40px;
   }
 
-  .image {
+  /* .image {
     width: 100px;
     height: auto;
     object-fit: cover;
     justify-self: end;
-  }
+  } */
 </style>
 
-<div class="container">
+<!-- <div class="container"> -->
   <div class="text">
     {content}
   </div>
-  <img src={imageSrc} class="image" />
-</div>
+<!-- </div> -->
