@@ -5,19 +5,26 @@ import StampBorder from "../components/StampBorder.astro";
 
 import "../styles/global.css";
 ---
+
 <StickySidebarLayout title="Gallery">
-<div slot="photoheader" class="image-header">
+  <div slot="photoheader" class="image-header">
     <img class="top" src="/images/stamps-42.png" />
     <img class="topp" src="/images/stamps-23.png" />
   </div>
 
-  <div slot="logo" >
+  <div slot="logo">
     <h1>MONIKACORE</h1>
   </div>
 
   <div slot="main">
-    <StampBorder><img src="/images/stamps-06.png" alt="a house on the top of a mountain">
-      </StampBorder>
+    <div class="image-days">
+      <StampBorder src="/images/stamps-04.png" alt="Stamp 4" size="100%" />
+      <StampBorder src="/images/stamps-05.png" alt="Stamp 5" size="100%" />
+      <StampBorder src="/images/stamps-06.png" alt="Stamp 6" size="100%" />
+      <StampBorder src="/images/stamps-07.png" alt="Stamp 7" size="100%" />
+    </div>
+    <!-- <StampBorder><img src="/images/stamps-06.png" alt="a house on the top of a mountain">
+    </StampBorder> -->
 
     <!-- <div class="image-days">
       <img src="/images/stamps-04.png" class="masonry-item">
@@ -39,7 +46,30 @@ import "../styles/global.css";
 </StickySidebarLayout>
 
 <style>
-.image-days {
+  .image-days {
+  column-count: 3;
+  column-gap: 15px;
+  padding: 50px;
+}
+
+.image-days > * {
+  break-inside: avoid;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 900px) {
+  .image-days {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-days {
+    column-count: 1;
+  }
+}
+
+  /* .image-days {
     column-count: 3;
     padding: 50px;
     gap: 10px;
@@ -55,7 +85,7 @@ import "../styles/global.css";
 
   .masonry-item:hover {
     transform: scale(1.6);
-  }
+  } */
 
 
   .image-header {
@@ -73,12 +103,12 @@ import "../styles/global.css";
     height: auto;
   }
 
-	h1{
+  h1 {
     margin: 10px;
-		text-align: center;
-		border: 2px solid #4b0034;
-		border-radius: 5px;
-	}
+    text-align: center;
+    border: 2px solid #4b0034;
+    border-radius: 5px;
+  }
 
   a:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -107,5 +137,3 @@ import "../styles/global.css";
     margin: 20px;
   }
 </style>
-
-</StickySidebarLayout>

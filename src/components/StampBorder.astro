@@ -1,14 +1,14 @@
----
+<!-- ---
 const { src, alt } = Astro.props;
----
-
+--- -->
+<!--
 <div class="stamp-border">
 <slot />
 </div>
 
 <style>
 img {
-  --r: 10px; /* control the radius of the circles */
+  --r: 10px;
   padding: calc(2*var(--r));
   filter: grayscale(.4) drop-shadow(0 0 1px #0005) drop-shadow(0 0 1px #0005);
   background:
@@ -22,14 +22,45 @@ body {
   margin: 0;
   height: 100vh;
   column-count: 2;
-/*        column-gap: 10px; */
-/*   row-gap: 10px */
-       padding:50px;
-/*   display: grid; */
-/*   place-content: center;
-  align-items: center;
-  grid-auto-flow: column;
-  grid-gap: 30px;
-  background: pink;
-} */
+  padding:50px;
+}
+</style> -->
+
+
+---
+const { src, alt, size = "250px" } = Astro.props;
+---
+
+<div class="stamp-border" style={`--img-size: ${size};`}>
+  { src
+    ? <img src={src} alt={alt} />
+    : <slot />
+  }
+</div>
+
+<style>
+.stamp-border {
+  display: inline-block;
+  max-width: var(--img-size);
+}
+
+.stamp-border img {
+  --r: 10px; /* radius of stamp perforations */
+  width: 100%;
+  height: auto;
+  padding: calc(2*var(--r));
+  background:
+    radial-gradient(var(--r), #0000 98%, #fff) round
+      calc(-1.5*var(--r)) calc(-1.5*var(--r)) / calc(3*var(--r)) calc(3*var(--r)),
+    linear-gradient(#fff 0 0) no-repeat
+      50% / calc(100% - 3*var(--r)) calc(100% - 3*var(--r));
+  filter: grayscale(.4) drop-shadow(0 0 1px #0005) drop-shadow(0 0 1px #0005);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: block;
+}
+
+.stamp-border img:hover {
+  transform: scale(2.08);
+  filter: grayscale(0) drop-shadow(0 0 3px #0008);
+}
 </style>
