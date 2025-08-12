@@ -1,7 +1,7 @@
 ---
-// import MainLayout from "../layouts/MainLayout.astro";
 import StickySidebarLayout from "../layouts/StickySidebarLayout.astro";
 import LinkButton from "../components/LinkButton.astro";
+import StampBorder from "../components/StampBorder.astro";
 
 import "../styles/global.css";
 ---
@@ -15,7 +15,8 @@ import "../styles/global.css";
     <h1>MONIKACORE</h1>
   </div>
 
-  <div slot="main">
+  <div slot="main" >
+    <StampBorder src="/images/home-page-image." alt="Beautiful scenery" />
   </div>
 
   <div slot="sidebar" class="sidebar">
@@ -32,6 +33,7 @@ import "../styles/global.css";
 </StickySidebarLayout>
 
 <style>
+
   .image-header {
     display: flex;
     align-items: center;
@@ -89,24 +91,10 @@ import "../styles/global.css";
     margin: 20px;
   }
 
-  .sidebar LinkButton:hover {
+  /* .sidebar LinkButton:hover {
     background-color: #4b0034;
     color: #fff;
-  }
+  } */
 </style>
 
 </StickySidebarLayout>
-
-
-<!-- <MainLayout>
-<img src="/images/stamps-43.png">
-</MainLayout>
-
-<style>
-  img{
-    width: 400px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-</style> -->

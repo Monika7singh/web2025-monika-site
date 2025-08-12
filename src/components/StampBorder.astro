@@ -1,48 +1,43 @@
 ---
-const { imageSrc } = Astro.props;
+const { src, alt } = Astro.props;
 ---
 
-<!-- <div class="stamp-border"></div> -->
-
-<div class="container">
-  <img src={imageSrc} class="stamp-border" />
+<div class="stamp-border">
+  <img src={src} alt={alt} />
 </div>
 
 <style>
 .stamp-border {
-  /* Change this value to adjust the stamp perforation size: */
-  --radius: 8px;
+    /* Change this value to adjust the stamp perforation size: */
+    --radius: 8px;
 
-  background-image:
-    radial-gradient(
-      var(--radius),
-      transparent 98%,
-      white
-    ),
-    linear-gradient(white 0 0);
-  background-repeat:
-    round,
-    no-repeat;
-  background-position:
-    calc(var(--radius) * -1.5) calc(var(--radius) * -1.5),
-    50%;
-  background-size:
-    calc(var(--radius) * 3) calc(var(--radius) * 3),
-    calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
-}
+    background-image:
+      radial-gradient(
+        var(--radius),
+        transparent 98%,
+        white
+      ),
+      linear-gradient(white 0 0);
+    background-repeat:
+      round,
+      no-repeat;
+    background-position:
+      calc(var(--radius) * -1.5) calc(var(--radius) * -1.5),
+      50%;
+    background-size:
+      calc(var(--radius) * 3) calc(var(--radius) * 3),
+      calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
+  }
 
 
-/*  Cosmetic styles */
-
-body {
-  background: slateblue;
-}
-
-.stamp-border {
-  width: min(50%, 600px);
-  height: 50%;
-  position: fixed;
-  inset: 0;
-  margin: auto;
-}
+  image{
+    width: 40px;
+  }
+  .stamp-border {
+    width: 100px;
+    height: 100px;
+    /* position: fixed; */
+    inset: 0;
+    margin: auto;
+  }
 </style>
