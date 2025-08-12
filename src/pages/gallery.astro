@@ -17,19 +17,13 @@ import "../styles/global.css";
   </div>
 
   <div slot="main">
-    <div class="image-days">
-      <StampBorder src="/images/stamps-04.png" alt="Stamp 4" size="100%" />
-      <StampBorder src="/images/stamps-05.png" alt="Stamp 5" size="100%" />
-      <StampBorder src="/images/stamps-06.png" alt="Stamp 6" size="100%" />
-      <StampBorder src="/images/stamps-07.png" alt="Stamp 7" size="100%" />
+    <div class="stamp-border">
+    <StampBorder src="/images/stamps-05.png" alt="Image 1" size="100px" />
+    <StampBorder src="/images/stamps-06.png" alt="Image 2" size="100px" />
+    <StampBorder src="/images/stamps-07.png" alt="Image 3" size="100px" />
+    <StampBorder src="/images/stamps-08.png" alt="Image 4" size="100px" />
     </div>
-    <!-- <StampBorder><img src="/images/stamps-06.png" alt="a house on the top of a mountain">
-    </StampBorder> -->
 
-    <!-- <div class="image-days">
-      <img src="/images/stamps-04.png" class="masonry-item">
-      <img src="/images/stamps-05.png" class="masonry-item">
-    </div> -->
   </div>
 
   <div slot="sidebar" class="sidebar">
@@ -46,46 +40,15 @@ import "../styles/global.css";
 </StickySidebarLayout>
 
 <style>
-  .image-days {
-  column-count: 3;
-  column-gap: 15px;
-  padding: 50px;
+  .stamp-border {
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* Change number to control columns */
+  gap: 90px; /* Change value to control space between images */
+  justify-content: center;
+  margin: 40px;
 }
 
-.image-days > * {
-  break-inside: avoid;
-  margin-bottom: 15px;
-}
 
-@media (max-width: 900px) {
-  .image-days {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .image-days {
-    column-count: 1;
-  }
-}
-
-  /* .image-days {
-    column-count: 3;
-    padding: 50px;
-    gap: 10px;
-  }
-
-  .masonry-item {
-    width: 100%;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-
-  .masonry-item:hover {
-    transform: scale(1.6);
-  } */
 
 
   .image-header {

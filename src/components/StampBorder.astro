@@ -1,32 +1,3 @@
-<!-- ---
-const { src, alt } = Astro.props;
---- -->
-<!--
-<div class="stamp-border">
-<slot />
-</div>
-
-<style>
-img {
-  --r: 10px;
-  padding: calc(2*var(--r));
-  filter: grayscale(.4) drop-shadow(0 0 1px #0005) drop-shadow(0 0 1px #0005);
-  background:
-    radial-gradient(var(--r),#0000 98%,#fff) round
-      calc(-1.5*var(--r)) calc(-1.5*var(--r)) /calc(3*var(--r)) calc(3*var(--r)),
-    linear-gradient(#fff 0 0)  no-repeat
-      50%/calc(100% - 3*var(--r)) calc(100% - 3*var(--r));
-}
-
-body {
-  margin: 0;
-  height: 100vh;
-  column-count: 2;
-  padding:50px;
-}
-</style> -->
-
-
 ---
 const { src, alt, size = "250px" } = Astro.props;
 ---
@@ -64,3 +35,8 @@ const { src, alt, size = "250px" } = Astro.props;
   filter: grayscale(0) drop-shadow(0 0 3px #0008);
 }
 </style>
+<!-- /* Resize images: Change size="200px" in each <StampBorder>
+
+Number of columns: Change repeat(3, auto) in .gallery
+
+Gap between images: Change gap: 20px; in .gallery */ -->
